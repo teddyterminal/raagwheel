@@ -20,39 +20,117 @@ var maincircle = rotatingG.append('circle')
 	.attr('cy', 0)
 	.attr('fill', "#fff")
 	.attr('stroke', '#000')
-	.attr('r', 200);
+	.attr('r', 240);
 
 var secondcircle = rotatingG.append('circle')
 	.attr('cx', 0)
 	.attr('cy', 0)
 	.attr('fill', "#fff")
 	.attr('stroke', '#000')
-	.attr('r', 165);
+	.attr('r', 200);
 
-var text = rotatingG.append("text")
-    .attr("x", 0)
-    .attr("y", 183)
-    .attr("dy", ".35em")
-    .text("A")
-    .call(d3.drag()
+var thirdcircle = rotatingG.append('circle')
+	.attr('cx', 0)
+	.attr('cy', 0)
+	.attr('fill', "#fff")
+	.attr('stroke', '#000')
+	.attr('r', 160);
+
+
+var controller = rotatingG.append('circle')
+	.attr('cx', 0)
+	.attr('cy', 200)
+	.attr('fill', "#f00")
+	.attr('r', 5)
+	.call(d3.drag()
   	.on('drag', dragRotate)
   	// Set coordinate system to a frame of reference that doesn't move.
 	.container(function() { return this.parentNode.parentNode })
-  );
+	);
 
+var S = rotatingG.append("text")
+    .attr("x", 0)
+    .attr("y", -180)
+    .attr("dy", ".35em")
+    .text("S");
 
+var r = rotatingG.append("text")
+    .attr("x", 90)
+    .attr("y", -156)
+    .attr("dy", ".35em")
+    .text("r");
+
+var R = rotatingG.append("text")
+    .attr("x", 156)
+    .attr("y", -90)
+    .attr("dy", ".35em")
+    .text("R");
+
+var g = rotatingG.append("text")
+    .attr("x", 180)
+    .attr("y", 0)
+    .attr("dy", ".35em")
+    .text("g");
+
+var G = rotatingG.append("text")
+    .attr("x", 156)
+    .attr("y", 90)
+    .attr("dy", ".35em")
+    .text("G");
+
+var M = rotatingG.append("text")
+    .attr("x", 90)
+    .attr("y", 156)
+    .attr("dy", ".35em")
+    .text("M");
+
+var m = rotatingG.append("text")
+    .attr("x", 0)
+    .attr("y", 180)
+    .attr("dy", ".35em")
+    .text("m");
+
+var P = rotatingG.append("text")
+    .attr("x", -90)
+    .attr("y", 156)
+    .attr("dy", ".35em")
+    .text("P");
+
+var d = rotatingG.append("text")
+    .attr("x", -156)
+    .attr("y", 90)
+    .attr("dy", ".35em")
+    .text("d");
+
+var D = rotatingG.append("text")
+    .attr("x", -180)
+    .attr("y", 0)
+    .attr("dy", ".35em")
+    .text("D");
+
+var n = rotatingG.append("text")
+    .attr("x", -156)
+    .attr("y", -90)
+    .attr("dy", ".35em")
+    .text("n");
+
+var N = rotatingG.append("text")
+    .attr("x", -90)
+    .attr("y", -156)
+    .attr("dy", ".35em")
+    .text("N");
 
 var radialLineGenerator = d3.radialLine();
 
 var points = [
-  [0, 165],
-  [Math.PI / 3, 165],
-  [Math.PI * 2 / 3, 165],
-  [Math.PI * 5 / 6, 165],
-  [Math.PI * 7 / 6, 165],
-  [Math.PI * 9 / 6, 165],
-  [Math.PI * 11 / 6, 165],
-  [Math.PI * 2, 165]
+  [0, 160],
+  [Math.PI / 3, 160],
+  [Math.PI * 2 / 3, 160],
+  [Math.PI * 5 / 6, 160],
+  [Math.PI * 7 / 6, 160],
+  [Math.PI * 9 / 6, 160],
+  [Math.PI * 11 / 6, 160],
+  [Math.PI * 2, 160]
 ];
 
 var pathData = radialLineGenerator(points);
