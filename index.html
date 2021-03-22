@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
-	
+
 <svg width='1000' height='1000'></svg>
 
 <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
 <script>
 
+//add a commit from the new laptop
+
 var svg = d3.select('svg');
 
 var level = svg.append('g')
   .attr('transform','translate(300,300)'); // center of rotation
-  
+
 var rotatingG = level.append('g')
 	//.call(d3.drag().on('drag', dragMove));
 
@@ -154,7 +156,7 @@ var circle = rotatingG.append('circle')
 
 function dragRotate() {
 	var x = d3.event.x, y = d3.event.y, angle;
-	if (x >= 0) { angle = 270 - (Math.atan(y / -x) * 180 / Math.PI); } 
+	if (x >= 0) { angle = 270 - (Math.atan(y / -x) * 180 / Math.PI); }
 	else { angle = 90 + (Math.atan(y / x) * 180 / Math.PI); }
 	rotatingG.attr('transform','rotate('+angle+')');
 }
